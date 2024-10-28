@@ -41,7 +41,7 @@ public class TccProviderStarter {
         }));
 
         //mock zk server
-        mockZKServer();
+//        mockZKServer();
 
         new ClassPathXmlApplicationContext( "spring/seata-dubbo-provider.xml");
         //keep run
