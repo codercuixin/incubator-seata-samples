@@ -50,6 +50,12 @@ public class BusinessServiceImpl implements BusinessService {
 //        if (random.nextBoolean()) {
 //            throw new RuntimeException("random exception mock!");
 //        }
+        //方便在 seata 后台查看
+        try {
+            Thread.sleep(180000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         throw new RuntimeException("random exception mock!");
     }
 
@@ -61,5 +67,10 @@ public class BusinessServiceImpl implements BusinessService {
         // just test batch update
         //stockService.batchDeduct(commodityCode, orderCount);
         orderService.create(userId, commodityCode, orderCount);
+        try {
+            Thread.sleep(180000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
